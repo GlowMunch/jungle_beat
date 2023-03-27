@@ -55,4 +55,20 @@ RSpec.describe LinkedList do
     expect(list.to_string).to eq("plop")
   end
 
+  it "Can insert into an array" do
+    list = LinkedList.new 
+    list.append("plop")
+    list.append("suu")
+    list.prepend("dop")
+    list.append("bloop")
+    expect(list.to_string).to eq("dop plop suu bloop")
+    expect(list.count).to eq(4)
+    list.insert(2, "woo")
+    expect(list.to_string).to eq("dop plop woo suu bloop")
+  end
+
+  it "Can find items in list" do
+    
+  end
+
 end

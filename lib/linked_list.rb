@@ -1,10 +1,9 @@
 class LinkedList
-  attr_accessor :head, :append, :count, :to_string, :prepend
+  attr_accessor :head, :append, :count, :to_string, :prepend, :insert
 
   def initialize 
     @head = nil
   end
-  
 #what is the diff between list.head and @head in pry
 
   def append(sound)
@@ -49,8 +48,16 @@ class LinkedList
     end
   end
 
-  def insert(data)
-    
+  def insert(location, data)
+    pos = 0
+    current_node = @head
+    while pos != location
+      current_next_node = current_node
+      current_node = current_node.next_node
+      pos += 1
+    end
+      insert_node = Node.new(data, current_node)
+      current_next_node.next_node = insert_node
   end
 
 end
