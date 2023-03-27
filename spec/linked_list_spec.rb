@@ -79,4 +79,16 @@ RSpec.describe LinkedList do
     expect(list.includes?("dep")).to eq(false)
   end
 
+  it "Can can pop" do
+    list = LinkedList.new 
+    list.append("woo")
+    list.append("shi")
+    list.prepend("deep")
+    list.append("blop")
+    list.insert(3, "shu")
+    list.pop
+    list.pop
+    expect(list.to_string).to eq("deep woo shi")
+  end
+
 end
