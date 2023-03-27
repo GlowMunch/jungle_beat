@@ -16,25 +16,43 @@ RSpec.describe LinkedList do
 
   it "Can append" do
     list = LinkedList.new   
-     require 'pry'; binding.pry
     list.append("doop")
-   require 'pry'; binding.pry
     expect(list.head.data).to eq("doop")
     expect(list.head.next_node).to eq(nil)
   end
 
-  xit "Can count" do
+  it "Can count" do
     list = LinkedList.new
     list.append("doop")
     list.append("zap")
+    expect(list.count).to eq(2)
 
-    # list.append("crap")
+  end
+
+  it "Can make string" do
+    list = LinkedList.new
+    list.append("doop")
+    list.append("deep")
+    expect(list.to_string).to eq("doop deep")
+  end
+
+  it "Can prepend" do
+    list = LinkedList.new
+    list.append("plop")
+    expect(list.head.data).to eq("plop")
+    list.to_string
+    expect(list.to_string).to eq("plop")
+    list.append("suu")
+    expect(list.to_string).to eq("plop suu")
+    list.prepend("dop")
+    expect(list.to_string).to eq("dop plop suu")
     expect(list.count).to eq(3)
   end
 
-  xit "Can make string" do
+  it "Can prepend with an empty array" do
     list = LinkedList.new
-    list.append("doop")
-    expect(list.to_sting).to eq("doop")
+    list.prepend("plop")
+    expect(list.to_string).to eq("plop")
   end
+
 end
