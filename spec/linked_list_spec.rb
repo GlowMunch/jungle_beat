@@ -60,21 +60,23 @@ RSpec.describe LinkedList do
     list.append("plop")
     list.append("suu")
     list.prepend("dop")
-    list.append("bloop")
-    expect(list.to_string).to eq("dop plop suu bloop")
-    expect(list.count).to eq(4)
+    expect(list.to_string).to eq("dop plop suu")
+    expect(list.count).to eq(3)
     list.insert(2, "woo")
-    expect(list.to_string).to eq("dop plop woo suu bloop")
+    expect(list.to_string).to eq("dop plop woo suu")
   end
 
-  it "Can find items in list" do
+  it "Can can find" do
     list = LinkedList.new 
-    list.append("plop")
-    list.append("suu")
-    list.prepend("dop")
-    list.append("bloop")
-    list.insert(2, "woo")
-    expect(list.find(1, 2)).to eq("plop woo")
+    list.append("woo")
+    list.append("shi")
+    list.prepend("deep")
+    list.append("blop")
+    list.insert(3, "shu")
+    expect(list.find(2, 1)).to eq("shi")
+    expect(list.find(1, 3)).to eq("woo shi shu")
+    expect(list.includes?("deep")).to eq(true)
+    expect(list.includes?("dep")).to eq(false)
   end
 
 end

@@ -76,6 +76,16 @@ class LinkedList
     end
       found.chomp(" ")
   end
+  
+  def includes?(check)
+    current_node = @head
+    while (current_node.data != check) && (current_node.next_node != nil)
+      current_node = current_node.next_node
+    end
+    if current_node.data == check
+      true
+    else
+      false
+    end
+  end
 end
-
-
