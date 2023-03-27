@@ -60,6 +60,22 @@ class LinkedList
       current_next_node.next_node = insert_node
   end
 
+  def find(index, qty)
+    pos = 0
+    returns = 0
+    found = ""
+    current_node = @head
+    while pos != index
+      current_node = current_node.next_node
+      pos += 1
+    end
+    while returns != qty
+      found << current_node.data + " "
+      returns += 1
+      current_node = current_node.next_node
+    end
+      found.chomp(" ")
+  end
 end
 
 

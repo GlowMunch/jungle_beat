@@ -68,7 +68,13 @@ RSpec.describe LinkedList do
   end
 
   it "Can find items in list" do
-    
+    list = LinkedList.new 
+    list.append("plop")
+    list.append("suu")
+    list.prepend("dop")
+    list.append("bloop")
+    list.insert(2, "woo")
+    expect(list.find(1, 2)).to eq("plop woo")
   end
 
 end
