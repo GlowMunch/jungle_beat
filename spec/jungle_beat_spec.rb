@@ -12,18 +12,19 @@ RSpec.describe JungleBeat do
 
   it "Can append a string as nodes and can count" do
     jb = JungleBeat.new
-    jb.append("deep doo ditt")
+    jb.append("deep tee dee")
     expect(jb.list.head.data).to eq("deep")
-    jb.append("woo hoo shu")
+    jb.append("na la boop")
     expect(jb.count).to eq(6)
-
   end
 
   it "Can use defined list" do
     jb = JungleBeat.new
-    jb.append("deep doo ditt")
-    jb.prepend("ahaa hbaa ha")
-   require 'pry'; binding.pry
+    jb.append("deep")
+    jb.append("Mississippi")
+    expect(jb.all).to eq("deep")
+    jb.prepend("tee tee tee Mississippi")
+    expect(jb.all).to eq("tee tee tee deep")
   end
 
 end

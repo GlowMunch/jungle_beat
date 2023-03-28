@@ -1,25 +1,32 @@
 class JungleBeat
-  attr_accessor :list
-  def initialize
+  attr_accessor :list, :def_list
+  def initialize 
     @list = LinkedList.new
+    @def_list = ["tee", "dee", "deep", "bop", "boop", "la", "na"]
   end
-  
-  # def defined_list(words)
-  #   @def_list << words.split(" ")
-  # end
+
+  def add_defined(adds)
+    words = adds.split(" ")
+    words.each do |word|
+      @def_list << word
+    end
+  end
 
   def append(string)
     strings = string.split(" ")
     strings.each do |str|
-      # @def_list.include? (str)
-      list.append(str)
+      if @def_list.include?(str)
+        list.append(str)
+      end
     end
   end
 
   def prepend(string)
     strings = string.split(" ")
     strings.each do |str|
-      list.prepend(str)
+      if @def_list.include?(str)
+         list.prepend(str)
+      end
     end
   end
 
