@@ -10,4 +10,13 @@ class JungleBeat
       list.append(str)
     end
   end
+
+  def count
+    list.count
+  end
+
+  def play(speed)
+    string = list.to_string
+    `say -r #{speed} -v Boing #{string}`
+  end
 end
