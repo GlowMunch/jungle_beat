@@ -1,8 +1,8 @@
 class LinkedList
   attr_accessor :head, :append, :count, :to_string, :prepend, :insert
 
-  def initialize 
-    @head = nil
+  def initialize (head = nil)
+    @head = head
   end
 #what is the diff between list.head and @head in pry
 

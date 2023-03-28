@@ -16,6 +16,14 @@ RSpec.describe JungleBeat do
     expect(jb.list.head.data).to eq("deep")
     jb.append("woo hoo shu")
     expect(jb.count).to eq(6)
-    require 'pry'; binding.pry
+
   end
+
+  it "Can use defined list" do
+    jb = JungleBeat.new
+    jb.append("deep doo ditt")
+    jb.prepend("ahaa hbaa ha")
+   require 'pry'; binding.pry
+  end
+
 end
