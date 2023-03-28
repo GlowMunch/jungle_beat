@@ -3,7 +3,6 @@ class LinkedList
   def initialize #(head = nil)
     @head = nil
   end
-#what is the diff between list.head and @head in pry
 
   def append(sound)
     if head == nil
