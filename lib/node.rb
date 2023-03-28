@@ -7,8 +7,8 @@ class Node
     @next_node = nxt
   end
 
-  # def data=(dat)
-  #   @data = dat
+  # def data=(datas)
+  #   @data = datas
   # end
 
   # def next_node=(node)

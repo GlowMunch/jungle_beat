@@ -1,8 +1,11 @@
 class JungleBeat
-  attr_accessor :list, :def_list
-  def initialize 
+  attr_accessor :list, :def_list, :rate, :voice
+  def initialize (data = " ")
     @list = LinkedList.new
-    @def_list = ["tee", "dee", "deep", "bop", "boop", "la", "na"]
+    @def_list = ["tee", "dee", "deep", "bop", "boop", "la", "na", "dop"]
+    @data = append(data)
+    @rate = 500
+    @voice = "Boing"
   end
 
   def add_defined(adds)
@@ -36,11 +39,27 @@ class JungleBeat
 
   def play
     string = list.to_string
-    `say -r 500 -v Boing #{string}`
+    `say -r #{rate} -v #{voice} #{string}`
   end
 
   def all
     list.to_string
+  end
+
+  def rate=value
+    @rate = value
+  end
+
+  def voice=value
+    @voice = value
+  end
+
+  def reset_rate
+    @rate = 500
+  end
+
+  def reset_voice
+    @voice = "Boing"
   end
 
 end
