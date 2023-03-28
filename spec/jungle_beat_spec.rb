@@ -5,12 +5,12 @@ require "./lib/node"
 
 RSpec.describe JungleBeat do
   
-  xit "Exists" do
+  it "Exists" do
     jb = JungleBeat.new
     expect(jb).to be_an_instance_of(JungleBeat)
   end
 
-  xit "Can append a string as nodes and can count" do
+  it "Can append a string as nodes and can count" do
     jb = JungleBeat.new
     jb.append("deep tee dee")
     expect(jb.list.head.data).to eq("deep")
@@ -18,7 +18,7 @@ RSpec.describe JungleBeat do
     expect(jb.count).to eq(6)
   end
 
-  xit "Can use defined list" do
+  it "Can use defined list" do
     jb = JungleBeat.new
     jb.append("deep")
     jb.append("Mississippi")
@@ -31,7 +31,6 @@ RSpec.describe JungleBeat do
     jb = JungleBeat.new
    
     jb.append("dop dop deep")
-require 'pry'; binding.pry
     jb.rate = 100
     jb.play
     jb.rate = 50
@@ -41,6 +40,7 @@ require 'pry'; binding.pry
     jb.play
     jb.reset_voice
     jb.play
+    expect(jb.all).to eq("dop dop deep la na dop")
 
   end
 
