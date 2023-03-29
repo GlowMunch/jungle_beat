@@ -1,5 +1,6 @@
 class JungleBeat
   attr_accessor :list, :def_list, :rate, :voice
+  
   def initialize (data = " ")
     @list = LinkedList.new
     @def_list = ["tee", "dee", "deep", "bop", "boop", "la", "na", "dop"]
