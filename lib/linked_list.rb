@@ -1,6 +1,6 @@
 class LinkedList
-  attr_accessor :head, #:append, :count, :to_string, :prepend, :insert
-  def initialize #(head = nil)
+  attr_accessor :head
+  def initialize 
     @head = nil
   end
 
